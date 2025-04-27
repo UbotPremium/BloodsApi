@@ -1,0 +1,638 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxzOffcial API</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+         
+            font-family: "Poppins", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        * {
+          scroll-behavior: smooth;
+        }
+        
+        @keyframes colorChange {
+    0% { color: rgba(0, 0, 0, 0.7); }
+    50% { color: rgb(84, 190, 255); }
+    100% { color: rgba(0, 0, 0, 0.7); }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        
+        .text-center {
+            text-align: left;
+            padding-bottom: 5px;
+            margin: 0 15px;
+        }
+        
+        
+        .text-center h1 span {
+          font-size: 10px;
+          background-color: rgba(0, 0, 0, 0.7);
+          padding: 2px 6px;
+          border-radius: 8px;
+          color: rgba(255, 255, 255, 1);
+        }
+        
+        .text-purple-700 {
+            color: #6B21A8;
+        }
+        
+        .text-gray-600 {
+          font-weight: 470;
+        }
+        
+        .text-center h1 {
+          animation: colorChange 15s infinite alternate;
+          font-weight: 550;
+        }
+        
+        .link a {
+          color: rgba(0, 0, 0, 0.8);
+          font-size: 15px;
+          font-weight: 550;
+        }
+        
+        .link a:hover {
+          color: rgba(84, 190, 255, 1);
+        }
+       
+        
+        .card {
+          margin: 2.6rem 4px;
+        }
+        
+        .card .title {
+          font-size: 22px;
+          font-weight: 505;
+          margin: 0 10px;
+          color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .card .endpoints {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: rgba(242, 242, 242, 0.5);
+          border-radius: 8px;
+          margin: 8px 10px;
+          height: 55px;
+        }
+        
+        .card .endpoints .method {
+          background-color: rgba(0, 0, 0, 0.7);
+          border-radius: 8px;
+          padding: 2px 7px;
+          margin: 8px 8px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          color: white;
+          font-size: 15px;
+        }
+        
+        .card .endpoints a {
+          background-color: rgba(84, 190, 255, 1);
+          border-radius: 8px;
+          padding: 2px 7px;
+          margin: 8px 8px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          color: white;
+          font-size: 15px;
+          text-decoration: none;
+        }
+        
+        .card .endpoints a:hover {
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .card .endpoints .name {
+          font-size: 14px;
+          font-weight: 580;
+          color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .tombol {
+          opacity: 0;
+          position: fixed;
+          z-index: 99;
+          bottom: 25px;
+          right: -50vh;
+          transition: all 0.8s;
+        }
+        
+        
+        .tombol button {
+          border: none;
+          padding: 15px 15px;
+          border-radius: 50px;
+          background-color: rgba(84, 190, 255, 1);
+        }
+        
+        .tombol button:active {
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .tombol button a {
+          color: white;
+          text-decoration: none;
+          font-size: 20px;
+        }
+        
+        .tombol.show {
+          right: 25px;
+          opacity: 1;
+        }
+        
+
+
+    </style>
+ 
+</head>
+<body>
+  <div class="tombol">
+<button><a class="fa fa-arrow-up" href="#"></a></button>
+</div>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="font-bold text-purple-700">LuxzOfficial API <span>v3.0.0</span></h1>
+            <div class="link">
+                <a href="https://wa.me/6283131164107" class="text-blue-500">Contact Developer</a>
+            </div>
+            <div class="link">
+                <a href="https://www.luxzoffc.web.id" class="text-blue-500">Developer Information</a>
+            </div>
+        </div>
+        
+<!-- Start Endpoints -->
+        <div class="card">
+        
+  <div class="title">Orderkuota Gateway</div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Create Payment</p>
+            <a href="https://api.luxz-store.biz.id/api/orkut/createpayment?apikey=&amount=&codeqr=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Cek Status</p>
+            <a href="https://api.luxz-store.biz.id/api/orkut/cekstatus?apikey=&merchant=&keyorkut=">Try</i></a>
+          </div>
+          
+        </div>
+<!-- Stop Endpoints -->
+
+
+<!-- Start Endpoints -->
+        <div class="card">
+        
+  <div class="title">Downloader</div>
+  
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">AIO (all downloader)</p>
+            <a href="https://api.luxz-store.biz.id/api/download/aiodl?url=">Try</i></a>
+          </div>
+                    
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Tiktok</p>
+            <a href="https://api.luxz-store.biz.id/api/download/tiktokdl?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Facebook</p>
+            <a href="https://api.luxz-store.biz.id/api/download/fbdl?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Instagram</p>
+            <a href="https://api.luxz-store.biz.id/api/download/igdl?url=">Try</i></a>
+          </div> 
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Ytmp3</p>
+            <a href="https://api.luxz-store.biz.id/api/download/ytmp3?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Ytmp4</p>
+            <a href="https://api.luxz-store.biz.id/api/download/ytmp4?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Youtube V2</p>
+            <a href="https://api.luxz-store.biz.id/api/download/ytdlv2?url=">Try</i></a>
+          </div>          
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Capcut</p>
+            <a href="https://api.luxz-store.biz.id/api/download/capcut?url=">Try</i></a>
+          </div>              
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Twitter</p>
+            <a href="https://api.luxz-store.biz.id/api/download/twitter?url=">Try</i></a>
+          </div>                                 
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Doodstream</p>
+            <a href="https://api.luxz-store.biz.id/api/download/doodstream?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Google Drive</p>
+            <a href="https://api.luxz-store.biz.id/api/download/gdrive?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Mediafire</p>
+            <a href="https://api.luxz-store.biz.id/api/download/mediafire?url=">Try</i></a>
+          </div>          
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Pinterest Video</p>
+            <a href="https://api.luxz-store.biz.id/api/download/pindlvid?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Spotify</p>
+            <a href="https://api.luxz-store.biz.id/api/download/spotify?url=">Try</i></a>
+          </div>     
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Play Spotify</p>
+            <a href="https://api.luxz-store.biz.id/api/download/playspotify?q=">Try</i></a>
+          </div>                                                
+                                        
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Soundcloud</p>
+            <a href="https://api.luxz-store.biz.id/api/download/soundcloud?url=">Try</i></a>
+          </div>        
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Snackvideo</p>
+            <a href="https://api.luxz-store.biz.id/api/download/snackvideo?url=">Try</i></a>
+          </div>           
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">XNXX</p>
+            <a href="https://api.luxz-store.biz.id/api/download/xnxxdl?url=">Try</i></a>
+          </div>           
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Terabox</p>
+            <a href="https://api.luxz-store.biz.id/api/download/terabox?url=">Try</i></a>
+          </div>                
+          
+        </div>
+<!-- Stop Endpoints -->
+
+
+<!-- Start Endpoints -->
+        <div class="card">
+        
+  <div class="title">Openai</div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Openai</p>
+            <a href="https://api.luxz-store.biz.id/api/ai/openai?msg=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Openai Prompt</p>
+            <a href="https://api.luxz-store.biz.id/api/ai/openai-prompt?prompt=&msg=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Blackbox</p>
+            <a href="https://api.luxz-store.biz.id/api/ai/blackbox?msg=">Try</i></a>
+          </div>          
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">DeepSeek</p>
+            <a href="https://api.luxz-store.biz.id/api/ai/deepseek?msg=">Try</i></a>
+          </div>          
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">GPT 4</p>
+            <a href="https://api.luxz-store.biz.id/api/ai/gpt4?text=">Try</i></a>
+          </div> 
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">GPT 3.5 Turbo</p>
+            <a href="https://api.luxz-store.biz.id/api/ai/gpt-3-5-turbo?text=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Gemini</p>
+            <a href="https://api.luxz-store.biz.id/api/ai/gemini?text="">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Sim Simi</p>
+            <a href="https://api.luxz-store.biz.id/api/ai/simsimi?msg=">Try</i></a>
+          </div>                    
+          
+        </div>
+<!-- Stop Endpoints -->
+
+
+<!-- Start Endpoints -->
+        <div class="card">
+        
+  <div class="title">Tools</div>       
+  
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">OCR</p>
+            <a href="https://api.luxz-store.biz.id/api/tools/ocr?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Shortlink Tinyurl</p>
+            <a href="https://api.luxz-store.biz.id/api/tools/tinyurl?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Shortlink Isgd</p>
+            <a href="https://api.luxz-store.biz.id/api/tools/isgd?url=">Try</i></a>
+          </div>          
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Whois Domain</p>
+            <a href="https://api.luxz-store.biz.id/api/tools/whois?domain=">Try</i></a>
+          </div>
+          
+        </div>
+<!-- Stop Endpoints -->
+
+
+<!-- Start Endpoints -->
+        <div class="card">
+        
+  <div class="title">Search</div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Google Image</p>
+            <a href="https://api.luxz-store.biz.id/api/search/gimage?q=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Pinterest</p>
+            <a href="https://api.luxz-store.biz.id/api/search/pinterest?q=">Try</i></a>
+          </div> 
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Playstore</p>
+            <a href="https://api.luxz-store.biz.id/api/search/playstore?q=">Try</i></a>
+          </div>           
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Fdroid</p>
+            <a href="https://api.luxz-store.biz.id/api/search/fdroid?q=">Try</i></a>
+          </div>               
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Youtube Search</p>
+            <a href="https://api.luxz-store.biz.id/api/search/ytsearch?q=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Happymod</p>
+            <a href="https://api.luxz-store.biz.id/api/search/happymod?q=">Try</i></a>
+          </div>
+
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Sfilemobi</p>
+            <a href="https://api.luxz-store.biz.id/api/search/sfile?q=">Try</i></a>
+          </div> 
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Tiktok Search</p>
+            <a href="https://api.luxz-store.biz.id/api/search/tiktoksearch?q=">Try</i></a>
+          </div> 
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">NPM Search</p>
+            <a href="https://api.luxz-store.biz.id/api/search/npm?q=">Try</i></a>
+          </div>        
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">XNXX Search</p>
+            <a href="https://api.luxz-store.biz.id/api/search/xnxx?q=">Try</i></a>
+          </div>                            
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Lyrics</p>
+            <a href="https://api.luxz-store.biz.id/api/search/lyrics?q=">Try</i></a>
+          </div>    
+          
+        </div>
+<!-- Stop Endpoints -->
+
+
+<!-- Start Endpoints -->
+        <div class="card">
+        
+  <div class="title">Sosmed Stalk</div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Tiktok Stalk</p>
+            <a href="https://api.luxz-store.biz.id/api/tools/tiktokstalk?user=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Instagram Stalk</p>
+            <a href="https://api.luxz-store.biz.id/api/tools/igstalk?username=">Try</i></a>
+          </div>          
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Github Stalk</p>
+            <a href="https://api.luxz-store.biz.id/api/tools/githubstalk?user=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">NPM Stalk</p>
+            <a href="https://api.luxz-store.biz.id/api/tools/npmstalk?pkgname=">Try</i></a>
+          </div>  
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Youtube Stalk</p>
+            <a href="https://api.luxz-store.biz.id/api/tools/youtubestalk?user=">Try</i></a>
+          </div>                              
+          
+        </div>
+<!-- Stop Endpoints -->
+
+
+<!-- Start Endpoints -->
+        <div class="card">
+        
+  <div class="title">Image Creator</div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Brat</p>
+            <a href="https://api.luxz-store.biz.id/api/imagecreator/bratgenerator?text=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Emoji Mix</p>
+            <a href="https://api.luxz-store.biz.id/api/imagecreator/emojimix?emoji1=&emoji2=">Try</i></a>
+          </div> 
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Emoji To Gif</p>
+            <a href="https://api.luxz-store.biz.id/api/imagecreator/emojitogif?emoji=">Try</i></a>
+          </div>                                
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Pornhub</p>
+            <a href="https://api.luxz-store.biz.id/api/imagecreator/pornhub?text1=&text2=">Try</i></a>
+          </div>
+          
+           <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Remini</p>
+            <a href="https://api.luxz-store.biz.id/api/imagecreator/remini?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Removebg</p>
+            <a href="https://api.luxz-store.biz.id/api/imagecreator/removebg?url=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Upscale</p>
+            <a href="https://api.luxz-store.biz.id/api/imagecreator/upscale?url=">Try</i></a>
+          </div>                            
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Quotely</p>
+            <a href="https://api.luxz-store.biz.id/api/imagecreator/qc?text=&fotoUrl=&nama=">Try</i></a>
+          </div>          
+          
+        </div>
+<!-- Stop Endpoints -->
+
+<!-- Start Endpoints -->
+        <div class="card">
+        
+  <div class="title">Panel Pterodactyl</div>       
+  
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Create Panel</p>
+            <a href="https://api.luxz-store.biz.id/api/pterodactyl/create?username=&ram=&disk=&cpu=&eggid=&nestid=&loc=&domain=&ptla=&ptlc=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">List Panel</p>
+            <a href="https://api.luxz-store.biz.id/api/pterodactyl/listpanel?eggid=&nestid=&loc=&domain=&ptla=&ptlc=">Try</i></a>
+          </div>
+          
+          <div class="endpoints">
+            <p class="method">Get</p>
+            <p class="name">Delete Panel</p>
+            <a href="https://api.luxz-store.biz.id/api/pterodactyl/delete?idserver=&domain=&ptla=">Try</i></a>
+          </div>                                        
+          
+        </div>
+<!-- Stop Endpoints -->
+
+
+<script>
+
+      document.addEventListener("DOMContentLoaded", function() {
+      const backToTopButton = document.querySelector(".tombol");
+
+      window.addEventListener("scroll", function() {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > scrollHeight * 0.10) {
+      backToTopButton.classList.add("show");
+      } else {
+      backToTopButton.classList.remove("show");
+      }
+      });
+      });
+
+      // Fungsi untuk kembali ke atas dengan animasi smooth
+      function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+</script>
+
+
+</body>
+</html>
